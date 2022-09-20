@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
     <head>
         <meta charset="UTF-8">
@@ -10,7 +10,7 @@
               theme: {
                 extend: {
                   backgroundImage: {
-                    'hero': "url('https://jopus.net/wp-content/uploads/2018/11/shutterstock_528642268.jpg')",
+                    'hero': "url('https://img.freepik.com/free-photo/corporate-businessmen-working-tablet-office_53876-97637.jpg?w=2000')",
                   },
                   animation: {
                     'spin': 'spin 10s linear infinite',
@@ -23,9 +23,9 @@
         <title>Entrée en entreprise - Projet CESI</title>
     </head>
 
-    <body>
+    <body class="bg-black scroll-smooth">
         <div class="flex flex-col lg:flex-row relative min-h-screen">
-            <div class="flex bg-yellow-900 text-white min-w-full lg:min-w-0 lg:min-h-full relative lg:w-1/2 px-8 md:px-12 py-4 md:py-6">
+            <div class="flex bg-cyan-900 text-white min-w-full lg:min-w-0 lg:min-h-full relative lg:w-1/2 px-8 md:px-12 py-4 md:py-6">
                 <div class="mx-auto flex flex-col justify-center z-10 my-12">
                     <h1 class="text-4xl md:text-7xl font-bold drop-shadow-lg">Entrer en entreprise</h1>
                     <h4 class="text-xl md:text-3xl">Le mode d'emploi pratique</h4>
@@ -35,14 +35,14 @@
                     </section>
                 </div>
 
-                <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block text-yellow-900" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block text-cyan-900" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
                     <polygon points="50,0 100,0 50,100 0,100" />
                 </svg>
             </div>
 
             <div class="bg-hero bg-cover bg-center grow"></div>
 
-            <div class="absolute bottom-8 right-8 lg:bottom-16 lg:right-16 h-24 w-24 animate-bounce">
+            <button class="absolute bottom-8 right-8 lg:bottom-16 lg:right-16 h-24 w-24 animate-bounce cursor-pointer" onclick="document.getElementById('first-section').scrollIntoView({behavior: 'smooth'})">
                 <div class="relative flex items-center justify-center h-full w-full">
                     <div class="absolute h-24 w-24 border-dotted border-white/50 border-4 rounded-full flex items-center justify-center animate-spin">
                     </div>
@@ -50,6 +50,52 @@
                     <div class="absolute flex items-center justify-center rounded-full shadow-lg h-16 w-16 bg-white/20 backdrop-blur text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down h-10 w-10"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                     </div>
+                </div>
+            </button>
+        </div>
+
+        <div id="first-section" class="flex flex-col relative min-h-screen bg-cyan-900/50 px-8 md:px-12">
+            <div class="container mx-auto py-8 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold drop-shadow-lg">Avant d'entrer dans l'entreprise</h2>
+                <h5 class="text md:text-lg">Les bonnes pratiques à avoir avant d'arriver</h5>
+
+                <div class="grid grid-cols-1 gap-6 my-10">
+                    <section class="flex flex-row gap-4">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full">
+                            <b class="text-2xl">1</b>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <h6 class="text-2xl font-semibold">Se renseigner sur l'entreprise</h6>
+                            <ul class="pl-6 list-disc leading-5 text-white/80">
+                                <li>Dénomination sociale</li>
+                                <li>Adresse</li>
+                                <li>Nombre de salariés</li>
+                                <li>Nom du chef d'entreprise</li>
+                                <li>Chiffre d'affaires annuel</li>
+                                <li>Avantages salariaux</li>
+                                <li>Forme juridique</li>
+                                <li>Image de marque</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section class="flex flex-row gap-4">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full">
+                            <b class="text-2xl">2</b>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <h6 class="text-2xl font-semibold">Préparer des itinéraires pour y accéder</h6>
+                            <p class="leading-5 text-white/80">
+                                Il est primordial de préparer à l'avance l'itinéraire que vous allez emprunter afin de se rendre sur le lieu de travail.<br>
+                                Préparer un itinéraire alternatif en cas de problème est également une bonne idée.
+                            </p>
+                            <p class="leading-5 text-white/80">
+                                N'oubliez pas de noter le temps de transport et de régler votre réveil en avance !
+                            </p>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
