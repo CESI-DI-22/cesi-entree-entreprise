@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
+
+        <script>
+            tailwind.config = {
+              theme: {
+                extend: {
+                  backgroundImage: {
+                    'hero': "url('https://jopus.net/wp-content/uploads/2018/11/shutterstock_528642268.jpg')",
+                  },
+                  animation: {
+                    'spin': 'spin 10s linear infinite',
+                  }
+                }
+              }
+            }
+        </script>
+
         <title>Entrée en entreprise - Projet CESI</title>
     </head>
 
     <body>
-        Hello World!
+        <div class="flex flex-col lg:flex-row relative min-h-screen">
+            <div class="flex bg-yellow-900 text-white min-w-full lg:min-w-0 lg:min-h-full relative lg:w-1/2 px-8 md:px-12 py-4 md:py-6">
+                <div class="mx-auto flex flex-col justify-center z-10 my-12">
+                    <h1 class="text-4xl md:text-7xl font-bold drop-shadow-lg">Entrer en entreprise</h1>
+                    <h4 class="text-xl md:text-3xl">Le mode d'emploi pratique</h4>
+
+                    <section class="pt-8">
+                        Sur ce site internet, vous trouverez différentes ressources et différents conseils qui vous aideront peut-être à faciliter votre entrée en entreprise.
+                    </section>
+                </div>
+
+                <svg class="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block text-yellow-900" fill="currentColor" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true">
+                    <polygon points="50,0 100,0 50,100 0,100" />
+                </svg>
+            </div>
+
+            <div class="bg-hero bg-cover bg-center grow"></div>
+
+            <div class="absolute bottom-8 right-8 lg:bottom-16 lg:right-16 h-24 w-24 animate-bounce">
+                <div class="relative flex items-center justify-center h-full w-full">
+                    <div class="absolute h-24 w-24 border-dotted border-white/50 border-4 rounded-full flex items-center justify-center animate-spin">
+                    </div>
+
+                    <div class="absolute flex items-center justify-center rounded-full shadow-lg h-16 w-16 bg-white/20 backdrop-blur text-white">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down h-10 w-10"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
