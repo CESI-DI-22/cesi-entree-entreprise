@@ -5,6 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="https://cdn.tailwindcss.com"></script>
 
+        <link href="https://fonts.googleapis.com/css2?family=Red Hat Text:wght@300..700" rel='stylesheet' type='text/css'>
+
         <script>
             tailwind.config = {
               theme: {
@@ -14,6 +16,22 @@
                   },
                   animation: {
                     'spin': 'spin 10s linear infinite',
+                    'updown': 'updown 4s infinite',
+                  },
+                  keyframes: {
+                    updown: {
+                        '0%, 100%': {
+                            transform: 'translateY(-25%)',
+                            animationTimingFunction: 'ease-in-out'
+                        },
+                        '50%': {
+                            transform: 'translateY(0%)',
+                            animationTimingFunction: 'ease-in-out'
+                        }
+                    }
+                  },
+                  fontFamily: {
+                    'sans': ['Red Hat Text', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', 'sans-serif', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji']
                   }
                 }
               }
@@ -42,26 +60,26 @@
 
             <div class="bg-hero bg-cover bg-center grow"></div>
 
-            <button class="absolute bottom-8 right-8 lg:bottom-16 lg:right-16 h-24 w-24 animate-bounce cursor-pointer" onclick="document.getElementById('first-section').scrollIntoView({behavior: 'smooth'})">
+            <button class="absolute bottom-8 right-8 lg:bottom-16 lg:right-16 h-24 w-24 animate-bounce cursor-pointer outline-none" onclick="document.getElementById('first-section').scrollIntoView({behavior: 'smooth'})">
                 <div class="relative flex items-center justify-center h-full w-full">
                     <div class="absolute h-24 w-24 border-dotted border-white/50 border-4 rounded-full flex items-center justify-center animate-spin">
                     </div>
 
-                    <div class="absolute flex items-center justify-center rounded-full shadow-lg h-16 w-16 bg-white/20 backdrop-blur text-white">
+                    <div class="absolute flex items-center justify-center rounded-full shadow-lg h-16 w-16 bg-white/20 hover:bg-black/20 transition backdrop-blur text-white">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-arrow-down h-10 w-10"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
                     </div>
                 </div>
             </button>
         </div>
 
-        <div id="first-section" class="flex flex-col relative min-h-screen bg-cyan-900/50 px-8 md:px-12">
+        <div id="first-section" class="flex flex-col relative min-h-screen bg-cyan-900/50 px-8 md:px-12 relative">
             <div class="container mx-auto py-8 text-white">
                 <h2 class="text-3xl md:text-4xl font-bold drop-shadow-lg">Avant d'entrer dans l'entreprise</h2>
                 <h5 class="text md:text-lg">Les bonnes pratiques à avoir avant d'arriver</h5>
 
-                <div class="grid grid-cols-1 gap-6 my-10">
+                <div class="grid grid-cols-1 gap-10 my-10">
                     <section class="flex flex-row gap-4">
-                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                             <b class="text-2xl">1</b>
                         </div>
 
@@ -81,7 +99,7 @@
                     </section>
 
                     <section class="flex flex-row gap-4">
-                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
                             <b class="text-2xl">2</b>
                         </div>
 
@@ -99,5 +117,190 @@
                 </div>
             </div>
         </div>
+
+        <div id="second-section" class="flex flex-col relative min-h-screen bg-cyan-800/60 px-8 md:px-12">
+            <div class="container mx-auto py-8 text-white">
+                <h2 class="text-3xl md:text-4xl font-bold drop-shadow-lg">Une fois dans l'entreprise</h2>
+                <h5 class="text md:text-lg">Quelques conseils de conduite et d'intégration</h5>
+
+                <div class="grid grid-cols-1 gap-10 my-10">
+                    <section class="flex flex-row gap-4">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                            <b class="text-2xl">1</b>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <h6 class="text-2xl font-semibold">Assurez-vous des règles à suivre</h6>
+                            <p class="leading-5 text-white/80">
+                                Renseignez-vous sur les heures d'arrivée et de départ, les pauses autorisées et communes, les règles de vie commune...<br>
+                                Un règlement intérieur vous sera probablement mis à disposition, il est important d'en intégrer son contenu.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="flex flex-row gap-4">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                            <b class="text-2xl">2</b>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <h6 class="text-2xl font-semibold">Suivre le mouvement</h6>
+                            <p class="leading-5 text-white/80">
+                                Essayez de vous intégrer avec les autres employés ! Prenez votre pause ensemble, mangez ensemble...<br>
+                                Vous pouvez leur poser des questions afin de mieux les connaître et de se renseigner sur les habitudes des employés.
+                            </p>
+                        </div>
+                    </section>
+
+                    <section class="flex flex-row gap-4">
+                        <div class="h-12 w-12 flex items-center justify-center bg-white/20 rounded-full flex-shrink-0">
+                            <b class="text-2xl">3</b>
+                        </div>
+
+                        <div class="flex flex-col gap-1">
+                            <h6 class="text-2xl font-semibold">Faites-vous discret</h6>
+                            <p class="leading-5 text-white/80">
+                                Essayez de ne pas trop vous faire remarquer dès le début. Pensez à participer à la vie de l'entreprise, mais n'en faites pas trop !
+                            </p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+
+        <div id="tools" class="flex flex-col relative min-h-screen bg-cyan-800/50 px-8 md:px-12">
+            <div class="flex flex-col container mx-auto py-8 text-white grow">
+                <h2 class="text-3xl md:text-4xl font-bold drop-shadow-lg">Les outils utilisés</h2>
+                <h5 class="text md:text-lg">Une liste d'outils fréquemment utilisés en entreprise qu'il est bon de connaître</h5>
+
+                <div class="flex flex-col grow justify-center w-full md:mt-16">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-24 md:gap-y-20 lg:gap-y-10 gap-x-8 my-14 justify-center h-full w-full">
+                        <section class="flex flex-row relative">
+                            <img src="https://www.elephorm.com/sites/elephorm/files/articles/Office%202021.jpg" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <h6 class="text-2xl font-semibold">Microsoft Office</h6>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Première suite bureautique</li>
+                                        <li>Outils de publipostage, de productivité, client mail...</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.office.com/" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="flex flex-row relative">
+                            <img src="https://f.hellowork.com/bdmtools/2019/12/jira-screenshot.png" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <h6 class="text-2xl font-semibold">Jira</h6>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Méthodologie agile</li>
+                                        <li>Tableaux d'organisation, timelines...</li>
+                                        <li>Suivi des tâches à effectuer</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.atlassian.com/software/jira" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="flex flex-row relative">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/GitLab_running_14.3.0-pre_%282021-08%29.png" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <div class="flex flex-row gap-2 items-center">
+                                        <h6 class="text-2xl font-semibold">GitLab</h6><span class="bg-cyan-600 rounded-full px-2 py-0.5 text-xs">Développement</span>
+                                    </div>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Client Git (système de versionnage de code)</li>
+                                        <li>Intégrations pipelines CI-CD</li>
+                                        <li>Merge requests, issues...</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.gitlab.com/" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="flex flex-row relative">
+                            <img src="https://static.teamviewer.com/resources/2018/05/windows-main.png" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12 bg-white">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <h6 class="text-2xl font-semibold">TeamViewer</h6>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Partage d'écran à distance</li>
+                                        <li>Utilisé pour le support informatique, la collaboration...</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.teamviewer.com/" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="flex flex-row relative">
+                            <img src="https://a.slack-edge.com/c5da2d2/marketing/img/downloads/refreshed/slack-client-windows-desktop.png" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <h6 class="text-2xl font-semibold">Slack</h6>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Plateforme de chat en équipe</li>
+                                        <li>Ressemble à Discord : salons, DMs, mentions...</li>
+                                        <li>Multiplateforme (desktop et mobile)</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.slack.com/" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+
+                        <section class="flex flex-row relative">
+                            <img src="https://f.hellowork.com/bdmtools/2021/05/Figma.jpg" class="h-32 xl:h-48 rounded-xl animate-updown opacity-90 mb-12">
+
+                            <div class="flex flex-col absolute left-28 md:left-16 xl:left-32 right-0 top-8 xl:top-12 bg-black/50 border border-white/50 z-20 backdrop-blur-lg rounded-2xl overflow-hidden shadow-lg">
+                                <div class="px-4 py-2">
+                                    <div class="flex flex-row gap-2 items-center">
+                                        <h6 class="text-2xl font-semibold">Figma</h6><span class="bg-green-600 rounded-full px-2 py-0.5 text-xs">Graphisme</span>
+                                    </div>
+                                    <ul class="pl-6 list-disc leading-5 text-white/80 text-sm leading-5">
+                                        <li>Logiciel de graphisme collaboratif</li>
+                                        <li>Concepts, mockups, prototypes de maquettes</li>
+                                        <li>Web based</li>
+                                    </ul>
+                                </div>
+
+                                <a target="_blank" href="https://www.figma.com/" class="w-full px-6 py-2 bg-white/20 hover:bg-cyan-100/30 transition flex gap-2 items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+                                    <span>Voir le site Internet</span>
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="https://raw.githack.com/busybox11/konami-rickroll-coconut-malled/master/konami.js" crossorigin="anonymous"></script>
     </body>
 </html>
