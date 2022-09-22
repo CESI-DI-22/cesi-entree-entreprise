@@ -67,6 +67,8 @@
                     <input type="email" name="job_personEmail" id="job_personEmail" class="bg-white/50 border-2 rounded-b-lg rounded-t px-2 py-1 placeholder:text-black/50 text-black" placeholder="Adresse email">
                   </div>
 
+                  <span id="errorMsg" class="text-red-300 block"></span>
+
                   <div class="flex flex-row items-center justify-between gap-3 pt-3 mt-auto">
                     <button onclick="resetForm()" class="text-white/60 hover:text-white transition flex flex-row gap-2">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -125,24 +127,25 @@
             for (field of formFields) {
               document.getElementById(field).value = "";
             }
+            document.getElementById('errorMsg').innerText = "";
           }
 
           function addNewContact() {
-            for (field of formFields) {
-              if (formFields.every(item => document.getElementById(item).checkValidity() == true)) {
-                if (formFields.splice(1).every(item => document.getElementById(item).value !== "")) {
-                  let oldContacts = JSON.parse(localStorage.getItem('contacts')) || {};
-                  oldContacts[document.getElementById('job_personName').value] = {
-                    jobName: document.getElementById('job_name').value,
-                    phone: document.getElementById('job_personNumber').value,
-                    email: document.getElementById('job_personEmail').value
-                  };
+            document.getElementById('errorMsg').innerText = ""
 
-                  localStorage.setItem('contacts', JSON.stringify(oldContacts));
-                  resetForm();
-                  init();
-                }
-              }
+            if (formFields.every(item => document.getElementById(item).checkValidity() == true)) {
+              let oldContacts = JSON.parse(localStorage.getItem('contacts')) || {};
+              oldContacts[document.getElementById('job_personName').value] = {
+                jobName: document.getElementById('job_name').value,
+                phone: document.getElementById('job_personNumber').value,
+                email: document.getElementById('job_personEmail').value
+              };
+
+              localStorage.setItem('contacts', JSON.stringify(oldContacts));
+              resetForm();
+              init();
+            } else {
+              document.getElementById('errorMsg').innerText = "Veuillez remplir correctement les champs renseignés";
             }
           }
 
@@ -156,17 +159,14 @@
           function init() {
             const gridContents = document.getElementById('gridContents');
 
-            for (let child of gridContents.children) {
-              if (child.id !== "addContactCard") {
-                try {
-                  child.remove();
-                } catch(e) {}
-              }
-            }
+            const addContactCard = gridContents.firstElementChild.cloneNode(true);
+
+            gridContents.innerHTML = "";
+            gridContents.insertAdjacentElement('beforeend', addContactCard);
 
             const contacts = Object.entries(JSON.parse(localStorage.getItem('contacts')) || {});
             for (let contact of contacts) {
-              gridContents.insertAdjacentHTML('beforeend', templates.gridItem(contact[0], contact[1]))
+              gridContents.insertAdjacentHTML('beforeend', templates.gridItem(contact[0], contact[1]));
             }
           }
 
